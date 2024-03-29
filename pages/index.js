@@ -77,6 +77,13 @@ export default function Home() {
       </nav>
 
       <main className="max-w-4xl p-8 mx-auto">
+        <section className="mb-28">
+          <div >
+            <h2 className="mb-4 text-2xl font-bold text-center">Help Us Reach Our Next Milestone</h2>
+            <ProgressBar progress={goalProgress} />
+          </div>
+          <p className="text-center">We’re currently raising funds to expand our services to more communities. Help us reach our goal by contributing today.</p>
+        </section>
         <section className="items-center mb-56 grid grid-cols-2 -mx-60">
           <div className='bg-[#A8DADC] rounded-xl p-6 py-24 shadow-xl'>
             <h2 className="mb-4 text-4xl font-bold">About Us</h2>
@@ -101,13 +108,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-28">
-          <div >
-            <h2 className="mb-4 text-2xl font-bold text-center">Help Us Reach Our Next Milestone</h2>
-            <ProgressBar progress={goalProgress} />
-          </div>
-          <p className="text-center">We’re currently raising funds to expand our services to more communities. Help us reach our goal by contributing today.</p>
-        </section>
 
         <section className="mb-12">
           <h2 className="mb-4 text-2xl font-bold text-center">Get Involved</h2>

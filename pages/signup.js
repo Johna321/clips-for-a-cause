@@ -25,7 +25,6 @@ const Signup = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(user.email.toString().toLowerCase());
         try {
             await Auth.signUp({
                 username: crypto.randomUUID(),
@@ -52,6 +51,8 @@ const Signup = () => {
         catch (err) {
             console.log("error registering user: ", err);
             setError("We're sorry, there was an error signing up. Please try again.");
+            await sleep(10000);
+            setError('');
         }
     }
 
@@ -64,7 +65,7 @@ const Signup = () => {
               </header>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className='text-xl font-bold text-center font-header'>Welcome!</div>
-                    {error && <div className='p-2 border bg-error border-errorBorder rounded-md'>{error}</div>}
+                    {error && <div className='p-2 border text-white bg-[red] border-error rounded-md'>{error}</div>}
                     <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="name" type="text" placeholder='Your name' />
                     <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="email" type="text" placeholder='Email address' />
                     <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="password" type="password" placeholder='Password' />
@@ -76,11 +77,3 @@ const Signup = () => {
 }
 
 export default Signup;
-
-      //  <form onSubmit={handleSubmit}>
-      //      <input name="name" onChange={handleInputChange} type="text" placeholder='Name' className="p-2 text-black rounded-lg bg-background" />
-      //      <input name="email" onChange={handleInputChange} type="text" placeholder='Email address' className="p-2 text-black rounded-lg bg-background" />
-      //      <input name="password" onChange={handleInputChange} type="password" placeholder='Password' className="p-2 text-black rounded-lg bg-background" />
-      //      {success && <div className='p-2 border bg-successBackground border-successBorder rounded-xl'>{success}</div>}
-      //      <button className="bg-primary text-[white] p-2 rounded-lg hover:opacity-50">Sign up</button>
-      //  </form>
