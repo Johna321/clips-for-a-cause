@@ -1,0 +1,26 @@
+/* indexStyles.css */
+.header{
+    background-color: #1D3557;
+    color: white;
+    text-align: center;
+    padding: 6px;
+ 
+  }
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #A8DADC;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
