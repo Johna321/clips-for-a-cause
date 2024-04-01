@@ -4,11 +4,11 @@ import * as API from 'aws-amplify/api'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient = new QueryClient();
 const apiClient = API.generateClient();
-
-import styles from '../src/styles/index.css';
 import '../src/styles/globals.css';
-import Header from '../src/components/Header'; // Header component
-import Footer from '../src/components/Footer'; // Footer component
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+//
+
 
 Amplify.configure({
     Auth: {
@@ -46,11 +46,15 @@ Amplify.configure({
 });
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-    </QueryClientProvider>
-  );
+    return (
+      <QueryClientProvider client={queryClient}>
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <Footer /> 
+      </QueryClientProvider>
+    );
 }
 
 export default MyApp;

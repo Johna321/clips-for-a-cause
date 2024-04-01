@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* */
+
+:root {
+  --primary-color: #ffcc00;
+  --secondary-color: #ff9900;
+  --text-dark: #333;
+  --text-light: #fff;
+  --card-hover-scale: 1.05;
+  --transition-speed: 0.3s;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

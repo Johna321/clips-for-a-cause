@@ -1,0 +1,199 @@
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+@keyframes liveDisplay {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.volunteerImageContainer {
+  width: 100%;
+  max-width: 500px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.volunteerButton {
+  animation: pulse 1s infinite;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.volunteerContainer {
+  margin-top: 10px;
+  animation: liveDisplay 1s;
+}
+
+.volunteerTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #00FF00;
+}
+
+.volunteerFlexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.volunteerImageContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+.volunteerImage {
+  width: 100%;
+  height: auto;
+}
+
+.volunteerContentContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+.volunteerSubtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.volunteerDescription {
+  font-size: 1rem;
+  color: #666666; 
+  margin-bottom: 4px;
+}
+
+.volunteerBullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 4px;
+}
+
+.volunteerBulletItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.volunteerBulletIcon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+  
+  .volunteerImageContainer {
+    width: 100%;
+    max-width: 500px;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .volunteerButton {
+    animation: pulse 1s infinite;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+  }
+
+.volunteerContainer {
+  margin-top: 10px;
+}
+
+.volunteerTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #00FF00; 
+}
+
+.volunteerFlexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.volunteerImageContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+.volunteerImage {
+  width: 100%;
+  height: auto;
+}
+
+.volunteerContentContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+.volunteerSubtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.volunteerDescription {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.volunteerBullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 4px;
+}
+
+.volunteerBulletItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.volunteerBulletIcon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00FF00;
+  margin-right: 8px;
+}
+
+.volunteerBulletText {
+  font-size: 1rem;
+  color: #666666;
+}
+
+.volunteerButton {
+  margin-top: auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00FF00; 
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.volunteerButton:hover {
+  background-color: #00CC00;
+}
+/* */

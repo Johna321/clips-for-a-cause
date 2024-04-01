@@ -1,0 +1,64 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  /* */
+  
+  .branding {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .slogan {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .navMenu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navMenu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .navMenu li a:hover {
+    color: #ff6600;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  
+  .searchInput {
+    border: none;
+    outline: none;
+    padding: 5px;
+    color: #000;
+  }
+  
+  .searchBar button {
+    background: none;
+    border: none;
+    padding: 5
+  }  
