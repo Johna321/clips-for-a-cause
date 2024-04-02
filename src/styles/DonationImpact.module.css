@@ -1,0 +1,113 @@
+.impactContainer {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .impactContainer h2 {
+    font-weight: 700; /* Adds boldness */
+    font-size: 2rem; /* Increases size for prominence */
+    color: #4400ff; /* Ensures the title is black */
+    text-transform: uppercase; /* Adds a stylistic touch by making the title uppercase */
+    text-shadow: 1px 1px 0px #fff, 2px 2px 0px #ccc; /* Optional: adds a subtle but cool text shadow effect */
+    margin-bottom: 2rem; /* Adds space below the title for separation */
+  }
+  
+  
+  .impactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .impactCard {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .highlight {
+    color: gold; /* Example color */
+    font-weight: bold;
+  }
+
+  
+  
+  .impactImage {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: perspective(1000px) rotateY(20deg); /* Example 3D effect */
+    transition: transform 0.5s ease;
+  }
+  
+  .impactImage:hover {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  
+  
+  .value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
+  .impactContainer h2 {
+    /* Existing styles */
+    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+  }
+  
+  .impactCard {
+    /* Existing styles */
+    background: #ffffff; /* Bright and clean background */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+  
+  .impactCard:before {
+    content: '';
+    position: absolute;
+    top: -2px; right: -2px; bottom: -2px; left: -2px;
+    z-index: -1;
+    background: linear-gradient(225deg, #007bff, #6610f2);
+    border-radius: inherit;
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+  }
+  
+  .impactCard:hover {
+    transform: scale(1.05);
+    border-color: gold;
+  }
+  
+  .impactCard:hover:before {
+    opacity: 1;
+  }
+
+  .impactImage {
+    width: 100%; /* Adjust based on your layout */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .highlightedText {
+    color: #007bff; /* Bright color for emphasis */
+    font-weight: bold;
+  }
+  
+  
+  
+  

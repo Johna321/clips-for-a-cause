@@ -1,0 +1,81 @@
+.storiesContainer {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .storiesContainer h2 {
+    font-weight: 700; /* Adds boldness */
+    font-size: 2rem; /* Increase size for prominence */
+    color: #fff200; /* Ensures the title is black */
+    text-transform: uppercase; /* Adds a stylistic touch by making the title uppercase */
+    text-shadow: 1px 1px 0px #fff, 2px 2px 0px #ccc; /* Optional: adds a cool text shadow effect */
+    margin-bottom: 2rem; /* Adds space below the title for separation */
+  }
+
+  .storiesContainer h2 {
+    /* Existing styles */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .storiesContainer h2:hover {
+    color: #0070f3; /* Modern, engaging hover effect */
+    cursor: pointer;
+  }
+  
+  .storyCard {
+    /* Existing styles */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .storyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .storyCard p, .author {
+    /* To add more modern and engaging typography */
+    font-family: 'Arial', sans-serif; /* Example font, consider using web-safe or imported fonts */
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    /* For users who prefer reduced motion */
+    .storyCard, .storiesContainer h2 {
+      transition: none;
+    }
+  }
+  
+  
+  
+  .storiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .storyCard {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .storyCard h3 {
+    color: #333;
+  }
+  
+
+.storyCard p {
+    color: #000; /* Makes text black */
+    font-size: 1rem; /* Adjust size as needed for clarity */
+    line-height: 1.5; /* Improves readability */
+  }
+  
+  .author {
+    color: #000; /* Makes author text black */
+    font-size: 0.9rem; /* Keeps the author text slightly smaller than the story content */
+    margin-top: 1rem;
+    font-style: normal; /* Optional: removes italic if you prefer that for better readability */
+  }
+  
