@@ -12,6 +12,7 @@
   .branding {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
   }
   
   .logo {
@@ -45,7 +46,6 @@
   .searchBar {
     display: flex;
     align-items: center;
-    background-color: #fff;
     border-radius: 20px;
     padding: 5px 10px;
   }
