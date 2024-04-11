@@ -1,0 +1,207 @@
+
+
+.container {
+position: relative;
+color: #fff;
+padding-bottom: 2rem; 
+}
+
+.container::before {
+content: '';
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0, 0, 0, 0.5);
+z-index: 0;
+}
+
+.title, .description, .teamIntro, .visionGoals {
+position: relative;
+z-index: 1;
+}
+
+.videoBackground {
+position: absolute;
+top: -10%;
+bottom: -10%;
+width: 130%;
+height: 130%;
+object-fit: cover;
+object-position: center;
+z-index: -1;
+}
+
+.container::before {
+content: '';
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0, 0, 0, 0.3);
+z-index: 0;
+}
+
+.title, .description, .teamIntro, .visionGoals {
+position: relative;
+z-index: 1;
+}
+.title {
+font-size: 2rem;
+color: #e8fcff;
+margin-bottom: 20px;
+text-align: center;
+font-weight: bold;
+text-shadow: 0 0 10px rgba(104, 104, 104, 0.5);
+padding: 10px; 
+border-radius: 5px; 
+}
+
+
+.description {
+font-size: 1rem;
+line-height: 1.6;
+color: #cfd8dc; 
+margin-bottom: 20px;
+border-left: 4px solid #a9ecf5;
+padding-left: 16px;
+}
+.image {
+width: 100%;
+max-width: 400px;
+height: auto;
+margin: 0 auto 20px; 
+border-radius: 50%; 
+box-shadow: 0 2px 4px rgb(255, 255, 255);
+object-fit: cover; 
+object-position: center; 
+}
+
+.mission {
+position: relative;
+font-size: 1.5rem;
+color: #00f6ff;
+}
+
+.animatedText {
+display: block;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+margin: 0 auto;
+animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+font-weight: bold;
+text-shadow: 0 0 10px #00f6ff;
+font-size: 2rem;
+color: #00f6ff;
+text-align: center;
+}
+
+
+@keyframes move {
+0% { transform: translateX(0); }
+50% { transform: translateX(100px); }
+100% { transform: translateX(0); }
+}
+
+@keyframes typing {
+0% { width: 0; text-align: left; }
+50% { text-align: left; }
+100% { width: 100%; text-align: center; }
+}
+
+
+@keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: #ffffff; }
+}
+
+.teamIntro {
+font-size: 1.25rem; 
+color: #cfd8dc; 
+margin-bottom: 30px; 
+text-align: center; 
+}
+.teamMemberCard {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 20px;
+padding: 20px;
+margin-bottom: 30px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: box-shadow 0.3s;
+display: flex; 
+flex-direction: column;
+align-items: center; 
+justify-content: center; 
+text-align: center;
+}
+
+.teamMemberCard:hover {
+box-shadow: 0 8px 16px rgba(255, 255, 255, 0.533);
+transform: scale(1.05); 
+}
+
+.teamMemberText {
+color: #cfd8dc;
+padding: 10px 0;
+margin-top: 10px; 
+}
+
+.teamMemberText .highlight {
+color: #a9ecf5;
+font-weight: bold; 
+text-transform: uppercase; 
+}
+
+.teamMemberTitle {
+color: #a9ecf5;
+font-size: 1.25rem; 
+font-weight: bold;
+}
+
+.teamMemberBio {
+font-size: 0.9rem; 
+margin-top: 10px;
+}
+
+.visionGoals {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+}
+
+.visionItem {
+background: rgba(0, 0, 0, 0.5);
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+transition: transform 0.3s ease;
+}
+
+.visionItem:hover {
+transform: scale(1.05);
+}
+
+.icon {
+font-size: 3rem;
+display: block;
+margin: 0 auto 20px;
+}
+.githubIcon {
+display: inline-block;
+margin-top: 8px; 
+font-size: 24px;
+}
+
+.githubLink {
+color: #a9ecf5; 
+transition: color 0.3s;
+}
+
+.githubLink:hover {
+color: #cfd8dc; 
+}
+
+

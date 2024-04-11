@@ -1,64 +1,122 @@
+.branding {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.logoImage {
+  height: auto; 
+  margin-right: 10px; 
+  align-self: flex-start;
+  vertical-align: middle;
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.slogan {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navMenu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navMenu li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navMenu li a:hover {
+  color: #ff6600;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: #000;
+}
+
+.searchBar button {
+  background: none;
+  border: none;
+  padding: 5;
+}
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-  }
-  /* */
-  
-  .branding {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .slogan {
-    font-size: 16px;
-    font-weight: normal;
-  }
-  
-  .navMenu {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navMenu li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 0 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .navMenu li a:hover {
-    color: #ff6600;
-  }
-  
-  .searchBar {
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  
-  .searchInput {
-    border: none;
-    outline: none;
-    padding: 5px;
-    color: #000;
-  }
-  
-  .searchBar button {
-    background: none;
-    border: none;
-    padding: 5
-  }  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #0143a5, #24539b, #5078a6);
+  color: #fff;
+}
+/* */
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.slogan {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.navMenu li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navMenu li a:hover {
+  color: #ff6600;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: #000;
+}
+
+.searchBar button {
+  background: none;
+  border: none;
+  padding: 5;
+}

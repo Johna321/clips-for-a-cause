@@ -4,8 +4,6 @@ import * as Auth from 'aws-amplify/auth';
 import { useGlobalStore } from '../utils';
 import styles from '../styles/header.module.css';
 
-
-/* */
 const Header = () => {
   const router = useRouter();
 
@@ -49,10 +47,10 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div onClick={() => router.push('/')} className={styles.branding}>
-        <h1 className={styles.logo}>Clips for a Cause</h1>
-        <p className={styles.slogan}>Making a difference, one haircut at a time.</p>
-      </div>
+     <div onClick={() => router.push('/')} className={styles.branding}>
+      <h1 className={styles.logo}>Clips for a Cause</h1>
+      <p className={styles.slogan}>Making a difference, one haircut at a time.</p>
+    </div>
       <nav aria-label="Main navigation">
         <ul className={styles.navMenu}>
           <li><a href="/about">About</a></li>
