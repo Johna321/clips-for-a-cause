@@ -1,0 +1,39 @@
+.thankYouPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F1FAEE;
+  }
+  
+  .thankYouContainer {
+    background-color: #A8DADC;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 1px #000;
+    max-width: 600px;
+  }
+  
+  .title {
+    color: #1D3557;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    color: #1D3557;
+    margin-bottom: 10px;
+  }
+  
+  .homeButton {
+    background-color: #1D3557;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 300ms ease;
+  }
+  
+  .homeButton:hover {
+    background-color: #457B9D;
+  }
+  

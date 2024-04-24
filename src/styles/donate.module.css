@@ -1,0 +1,40 @@
+.donationButton {
+    background-color: #1D3557;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .donationButton:hover, .donationButton:focus {
+    background-color: #457B9D;
+  }
+  
+  .active {
+    background-color: #E63946;
+  }
+  
+  .input {
+    padding: 8px 12px;
+    border: 2px solid #A8DADC;
+    border-radius: 5px;
+  }
+  
+  .donateButton {
+    background-color: #1D3557;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  .donateButton:hover {
+    background-color: #457B9D;
+  }
+  

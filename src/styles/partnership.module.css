@@ -1,4 +1,5 @@
 
+  
   .partnershipContainer {
     margin: 2.5rem auto;
     padding: 0 1rem;
@@ -35,10 +36,9 @@
     text-transform: uppercase;
     margin-top: auto; 
   }
-  /* */
   
   .donateButton:hover {
-    background-color: var(--secondary-color); 
+    background-color: rgb(37, 21, 0); /* Updated color to brown */
     transform: translateY(-0.25rem); 
   }
     

@@ -1,0 +1,123 @@
+.dashboardContainer {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.profilePic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 20px;
+}
+
+.profileName, .profileEmail, .dateJoined {
+    color: #333;
+}
+
+.profileName {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profileEmail {
+    font-size: 18px;
+}
+
+.dateJoined {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.donationSection, .notificationPanel, .eventsSection {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.donationHistoryItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.donationAmount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.donateButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+}
+
+.notificationItem {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.eventsSection {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.eventItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.eventName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.eventButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+}

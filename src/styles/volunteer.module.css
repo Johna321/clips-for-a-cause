@@ -1,3 +1,4 @@
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -24,6 +25,8 @@
   display: flex;
   justify-content: right;
   align-items: right;
+  padding-bottom: 10px; 
+
 }
 
 .volunteerContainer {
@@ -107,6 +110,7 @@
     display: flex;
     justify-content: right;
     align-items: right;
+    padding-bottom: 10px; 
   }
 
 .volunteerContainer {
@@ -191,6 +195,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  padding-bottom: 10px; 
 }
 
 .volunteerButton:hover {
