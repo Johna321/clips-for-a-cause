@@ -1,5 +1,5 @@
 import { Amplify } from 'aws-amplify';
-import * as Auth from 'aws-amplify/auth';
+import { Auth } from 'aws-amplify';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';

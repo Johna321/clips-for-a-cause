@@ -12,7 +12,7 @@ const DonationOptions = () => {
     if (authenticated) {
       router.push('/donate');
     } else {
-      router.push('/login');
+      router.push('/guest-donate');
     }
   };
 

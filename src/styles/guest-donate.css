@@ -1,0 +1,72 @@
+
+.donationwrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.left-side {
+  background-image: url('/levels-barbershop-new-york-ny.jpg');
+  background-size: cover;
+  background-position: right;
+  color: #000000;
+  width: 70%;
+  padding: 20px;
+}
+
+
+.donation-form {
+  background-color: #A5D3D6;
+  color: #000000;
+  width: 30%;
+  padding: 20px;
+  height: 100%;
+}
+
+.donation-option {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 16px; 
+  border: 2px solid transparent; 
+  border-radius: 4px; 
+  background-color: #1E2D4C;
+  color: #F5F5F5;
+}
+
+.donation-option.active {
+  background-color: #457B9D;
+  color: #F5F5F5;
+  border-color: #457B9D; 
+}
+
+.donation-option-preset {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 16px; 
+  border: 2px solid transparent; 
+  border-radius: 4px; 
+  background-color: #1E2D4C;
+  color: #F5F5F5;
+}
+
+.donation-option-preset.active {
+  background-color: #457B9D;
+  color: #F5F5F5;
+  border-color: #457B9D; 
+}
+
+
+.donation-submit {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 16px; 
+  border: 2px solid transparent; 
+  border-radius: 4px; 
+  width: relative;
+  background-color: #1E2D4C;
+  text-align: center;
+  color: #F5F5F5;
+}
