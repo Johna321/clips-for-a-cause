@@ -29,6 +29,9 @@ const Dashboard = () => {
       getUserInfo();
       fetchRsvpedEvents(); // Call the function to fetch RSVP'd events
     }
+
+    const storedDonations = JSON.parse(localStorage.getItem('donations')) || [];
+    setDonations(storedDonations);
   }, [authenticated]);
 
   const handleViewEvents = () => {
@@ -36,8 +39,10 @@ const Dashboard = () => {
   };
 
   const fetchRsvpedEvents = async () => {
-    setRsvpedEvents(eventsData);
+    const upcomingEvents = eventsData.filter(event => event.type === 'upcoming');
+    setRsvpedEvents(upcomingEvents);
   };
+  
 
   const handleSignOut = async () => {
     try {
@@ -56,26 +61,26 @@ const Dashboard = () => {
         <div>
           <div className={styles.profileName}>{user.name || 'No Name'}</div>
           <div className={styles.profileEmail}>{user.email || 'No Email'}</div>
-          <div className={styles.dateJoined}>Joined: {user.dateJoined}</div>
+          <div className={styles.dateJoined}>Joined: April 2024</div>
         </div>
       </div>
 
-      <div className={styles.donationSection}>
-        <h2 className={styles.center}>Your Donation History</h2>
-        {donations.length > 0 ? (
-          donations.map(donation => (
-            <div key={donation.id} className={styles.donationHistoryItem}>
-              <span className={styles.donationAmount}>${donation.amount}</span>
-              <span>Date: {donation.date}</span>
-            </div>
-          ))
-        ) : (
-          <div className={styles.donationHistoryItem}>
-            <p>You have not made any donations yet.</p>
+    <div className={styles.donationSection}>
+      <h2 className={styles.center}>Your Donation History</h2>
+      {donations.length > 0 ? (
+        donations.map((donation, index) => (
+          <div key={index} className={styles.donationHistoryItem}>
+            <span className={styles.donationAmount}>{donation.amount}</span>
+            <span>Date: {donation.date}</span>
           </div>
-        )}
-        <a href="/donate" className={styles.donateButton}>Make a Donation</a>
-      </div>
+        ))
+      ) : (
+        <div className={styles.donationHistoryItem}>
+          <p>You have not made any donations yet.</p>
+        </div>
+      )}
+      <a href="/donate" className={styles.donateButton}>Make Another Donation</a>
+    </div>
 
       <div className={styles.eventsSection}>
         <h2 className={styles.center}>RSVP'd Events</h2>

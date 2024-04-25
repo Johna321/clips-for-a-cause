@@ -16,12 +16,34 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
+    role: "consumer",
+    profilePicture: null,
   });
+
   const setAuthenticated = useGlobalStore(state => state.setAuthenticated);
 
+  // const handleInputChange = (e) => {
+  //   setUser({ ...user, [e.target.name]: e.target.value });
+  // };
+
   const handleInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    const { name, value, checked, type } = e.target;
+    
+    if (type === "checkbox") {
+      // If the checkbox was checked, add the value to the roles array.
+      // If the checkbox was unchecked, remove the value from the roles array.
+      setUser(prevState => ({
+        ...prevState,
+        [name]: checked
+          ? [...prevState[name], value]
+          : prevState[name].filter(item => item !== value)
+      }));
+    } else {
+      setUser(prevState => ({ ...prevState, [name]: value }));
+    }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,8 +89,58 @@ const Signup = () => {
           <div className='text-xl font-bold text-center font-header'>Welcome!</div>
           {error && <div className='p-2 border text-white bg-[red] border-error rounded-md'>{error}</div>}
           <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="name" type="text" placeholder='Your name' />
-          <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="email" type="text" placeholder='Email address' />
+          <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="email" type="text" placeholder='Email address'/>
+          <label className="p-2 text-black">
+            Upload Profile Picture: <br/>
+            <input type="file" onChange={handleInputChange} name="profilePicture" accept="image/jpeg" className="bg-background" />
+          </label>
+          <label className="p-2 text-black rounded-md bg-background">
+            Select Role(s): <br/>
+          </label>
+          
+          <div>
+          <label>
+            <input
+              className="p-2 text-black rounded-md bg-background"
+              type="checkbox"
+              name="role"
+              value="client"
+              checked={user.role.includes("client")}
+              onChange={handleInputChange}
+            />
+            Client <br/>
+          </label>
+          <label>
+            <input
+              className="p-2 text-black rounded-md bg-background"
+              type="checkbox"
+              name="role"
+              value="barber"
+              checked={user.role.includes("barber")}
+              onChange={handleInputChange}
+            />
+            Barber<br/>
+          </label>
+          <label>
+            <input
+              className="p-2 text-black rounded-md bg-background"
+              type="checkbox"
+              name="role"
+              value="donor"
+              checked={user.role.includes("donor")}
+              onChange={handleInputChange}
+            />
+            Donor
+          </label>
+</div>
           <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="password" type="password" placeholder='Password' />
+          <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="confirmPassword" type="password" placeholder='Confirm Password' />
+
+          {user.password && user.confirmPassword && user.password !== user.confirmPassword && (
+            <div className='p-2 text-white bg-red-500 border border-error rounded-md'>
+              The passwords do not match.
+            </div>
+            )}
           <button className="bg-[#1D3557] text-[white] p-2 rounded-md hover:opacity-50">Sign Up</button>
         </form>
       </div>
