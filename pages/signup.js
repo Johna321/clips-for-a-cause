@@ -133,9 +133,9 @@ const Signup = () => {
             Donor
           </label>
 </div>
+<label class>Password must be at least six characters</label>
           <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="password" type="password" placeholder='Password' />
           <input onChange={handleInputChange} className="p-2 text-black rounded-md bg-background" name="confirmPassword" type="password" placeholder='Confirm Password' />
-
           {user.password && user.confirmPassword && user.password !== user.confirmPassword && (
             <div className='p-2 text-white bg-red-500 border border-error rounded-md'>
               The passwords do not match.

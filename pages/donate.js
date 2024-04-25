@@ -24,6 +24,8 @@ const Donate = () => {
     setError('');
   };
 
+  const [isRecurring, setIsRecurring] = useState(false);
+
   const submitDonation = (e) => {
     e.preventDefault();
     if (donationType === 'monthly' && !authenticated) {
@@ -71,7 +73,12 @@ const Donate = () => {
               <input className={`${styles.input} w-full`} type="text" placeholder="Expiry MM/YY" value={expiry} onChange={(e) => setExpiry(e.target.value)} />
               <input className={`${styles.input} w-full`} type="text" placeholder="CVC" value={cvc} onChange={(e) => setCvc(e.target.value)} />
               <input className={`${styles.input} w-full`} type="text" placeholder="Cardholder Name" value={holderName} onChange={(e) => setHolderName(e.target.value)} />
+              <label className="flex items-center gap-2">
+              <input type="checkbox" checked={isRecurring} onChange={() => setIsRecurring(!isRecurring)}/>
+              Enable Monthly Recurring Payment
+              </label>
               <button className={`${styles.donateButton}`} type="submit">Donate Now</button>
+              
             </div>
           ) : (
             <div className="flex flex-col gap-2">
