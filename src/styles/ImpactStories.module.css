@@ -1,81 +1,66 @@
 .storiesContainer {
-    text-align: center;
-    margin: 2rem 0;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+  .storiesTitle {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #4400ff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #fff, 2px 2px 0px #ccc;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .storiesContainer h2 {
-    font-weight: 700; /* Adds boldness */
-    font-size: 2rem; /* Increase size for prominence */
-    color: #fff200; /* Ensures the title is black */
-    text-transform: uppercase; /* Adds a stylistic touch by making the title uppercase */
-    text-shadow: 1px 1px 0px #fff, 2px 2px 0px #ccc; /* Optional: adds a cool text shadow effect */
-    margin-bottom: 2rem; /* Adds space below the title for separation */
-  }
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
 
-  .storiesContainer h2 {
-    /* Existing styles */
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .storiesContainer h2:hover {
-    color: #0070f3; /* Modern, engaging hover effect */
-    cursor: pointer;
-  }
-  
-  .storyCard {
-    /* Existing styles */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .storyCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  
-  .storyCard p, .author {
-    /* To add more modern and engaging typography */
-    font-family: 'Arial', sans-serif; /* Example font, consider using web-safe or imported fonts */
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    /* For users who prefer reduced motion */
-    .storyCard, .storiesContainer h2 {
-      transition: none;
-    }
-  }
-  
-  
-  
-  .storiesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-  
-  .storyCard {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .storyCard h3 {
-    color: #333;
-  }
-  
+.storyCard {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
 
-.storyCard p {
-    color: #000; /* Makes text black */
-    font-size: 1rem; /* Adjust size as needed for clarity */
-    line-height: 1.5; /* Improves readability */
-  }
-  
-  .author {
-    color: #000; /* Makes author text black */
-    font-size: 0.9rem; /* Keeps the author text slightly smaller than the story content */
-    margin-top: 1rem;
-    font-style: normal; /* Optional: removes italic if you prefer that for better readability */
-  }
-  
+.storyCard:hover {
+  transform: translateY(-5px);
+}
+
+.storyContent {
+  padding: 1rem;
+}
+
+.storyTitle {
+  font-weight: bold;
+  color: #1a202c;
+}
+
+.storyText {
+  color: #4a5568;
+  margin: 1rem 0;
+}
+
+.author {
+  font-style: italic;
+  color: #718096;
+}
+.storyImage {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.storyImage:hover {
+  filter: none;
+}
+

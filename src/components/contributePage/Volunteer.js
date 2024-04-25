@@ -1,9 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useGlobalStore } from '../../utils';
 import styles from '../../styles/volunteer.module.css';
-/* */
 
 const VolunteerComponent = () => {
+  const router = useRouter();
+  const authenticated = useGlobalStore(state => state.authenticated);
+
+  const handleSignUpToVolunteerClick = () => {
+    if (authenticated) {
+      router.push('/events');
+    } else {
+      router.push('/login');
+    }
+  };
+
   return (
     <div className={styles.volunteerContainer}>
       <h2 className={styles.volunteerTitle}>Volunteer with Us</h2>
@@ -39,7 +51,7 @@ const VolunteerComponent = () => {
               Be a part of community-driven change
             </li>
           </ul>
-          <button className={styles.volunteerButton}>
+          <button onClick={handleSignUpToVolunteerClick} className={styles.volunteerButton}>
             Sign Up to Volunteer
           </button>
         </div>
