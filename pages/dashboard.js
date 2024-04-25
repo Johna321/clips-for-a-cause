@@ -36,8 +36,10 @@ const Dashboard = () => {
   };
 
   const fetchRsvpedEvents = async () => {
-    setRsvpedEvents(eventsData);
+    const upcomingEvents = eventsData.filter(event => event.type === 'upcoming');
+    setRsvpedEvents(upcomingEvents);
   };
+  
 
   const handleSignOut = async () => {
     try {
@@ -56,7 +58,7 @@ const Dashboard = () => {
         <div>
           <div className={styles.profileName}>{user.name || 'No Name'}</div>
           <div className={styles.profileEmail}>{user.email || 'No Email'}</div>
-          <div className={styles.dateJoined}>Joined: {user.dateJoined}</div>
+          <div className={styles.dateJoined}>Joined: April 2024</div>
         </div>
       </div>
 
