@@ -24,7 +24,7 @@ const DonationOptions = () => {
           <div className="mb-4" style={{ display: 'flex', justifyContent: 'center' }}>
             <Image src="/one-key-svgrepo-com.svg" alt="One-Time Donation" width={80} height={80} />
           </div>
-          <h3 className="text-2xl font-semibold mb-3">One-Time Donation</h3>
+          <h3 className="text-2xl font-semibold mb-3">Make a Donation</h3>
           <p className="mb-4">
             Your contribution can help us offer haircuts and grooming services to improve lives.
           </p>
