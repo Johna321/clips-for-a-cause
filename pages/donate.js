@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useGlobalStore } from '../src/utils/';
-import styles from '../src/styles/donate.module.css'; // Ensure you have this CSS module
+import { useGlobalStore } from '../src/utils';
+import styles from '../src/styles/donate.module.css';
 
 const Donate = () => {
   const router = useRouter();
-  const authenticated = useGlobalStore(state => state.authenticated);
+  const authenticated = useGlobalStore((state) => state.authenticated);
   const [donationType, setDonationType] = useState('money');
   const [donationAmount, setDonationAmount] = useState('');
   const [productDetails, setProductDetails] = useState('');
@@ -18,6 +18,25 @@ const Donate = () => {
   const [cvc, setCvc] = useState('');
   const [holderName, setHolderName] = useState('');
   const [error, setError] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    if (donationType === 'money') {
+      setIsFormValid(validateMonetaryDonation());
+    } else if (donationType === 'product') {
+      setIsFormValid(validateProductDonation());
+    }
+  }, [donationType, donationAmount, cardNumber, expiry, cvc, holderName, productDetails, contactName, contactEmail, contactPhone]);
+
+  // Validation function for monetary donation
+  const validateMonetaryDonation = () => {
+    return donationAmount && cardNumber && expiry && cvc && holderName;
+  };
+
+  // Validation function for product donation
+  const validateProductDonation = () => {
+    return productDetails && contactName && contactEmail && contactPhone;
+  };
 
   const handleDonationTypeChange = (event) => {
     setDonationType(event.target.value);
@@ -26,19 +45,17 @@ const Donate = () => {
 
   const submitDonation = (e) => {
     e.preventDefault();
-    if (donationType === 'monthly' && !authenticated) {
-      setError('You must be logged in to set up a monthly donation.');
-      return;
-    }
-    if (donationType === 'product' && !productDetails) {
-      setError('Please specify the product you wish to donate.');
-      return;
-    }
-    console.log(`Donation type: ${donationType}, Amount/Product: ${donationType === 'money' ? donationAmount : productDetails}`);
-    // Log or send a notification of product donation
+    const newDonation = {
+      id: new Date().toISOString(),
+      amount: donationType === 'money' ? donationAmount : 'Product/Service',
+      date: new Date().toLocaleDateString(),
+    };
+    const existingDonations = JSON.parse(localStorage.getItem('donations')) || [];
+    existingDonations.push(newDonation);
+    localStorage.setItem('donations', JSON.stringify(existingDonations));
+  
     router.push('/thankyou');
   };
-
   return (
     <div className="bg-[#F1FAEE] min-h-screen p-10 text-black">
       <div className="flex flex-col bg-[#A8DADC] gap-4 p-5 shadow-shadow shadow-[2px_2px_0_1px_#000] sm:border-[1px] sm:rounded-md">
@@ -60,8 +77,8 @@ const Donate = () => {
             </label>
           </div>
           {donationType === 'money' ? (
-            <div className="flex flex-col gap-2">
-              {[10, 20, 50, 100, 500].map(amount => (
+            <>
+              {[10, 20, 50, 100, 500].map((amount) => (
                 <button key={amount} type="button" className={`${styles.donationButton} ${donationAmount === amount.toString() ? styles.active : ''}`} onClick={() => setDonationAmount(amount.toString())}>
                   ${amount}
                 </button>
@@ -71,10 +88,12 @@ const Donate = () => {
               <input className={`${styles.input} w-full`} type="text" placeholder="Expiry MM/YY" value={expiry} onChange={(e) => setExpiry(e.target.value)} />
               <input className={`${styles.input} w-full`} type="text" placeholder="CVC" value={cvc} onChange={(e) => setCvc(e.target.value)} />
               <input className={`${styles.input} w-full`} type="text" placeholder="Cardholder Name" value={holderName} onChange={(e) => setHolderName(e.target.value)} />
-              <button className={`${styles.donateButton}`} type="submit">Donate Now</button>
-            </div>
+              <button className={`${styles.donateButton}`} type="submit" disabled={!isFormValid}>
+                Donate Now
+              </button>
+            </>
           ) : (
-            <div className="flex flex-col gap-2">
+            <>
               <textarea className={`${styles.input} w-full`} placeholder="Describe the products you wish to donate" value={productDetails} onChange={(e) => setProductDetails(e.target.value)} />
               <input className={`${styles.input} w-full`} type="text" placeholder="Your Name" value={contactName} onChange={(e) => setContactName(e.target.value)} />
               <input className={`${styles.input} w-full`} type="email" placeholder="Your Email" value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} />
@@ -83,12 +102,16 @@ const Donate = () => {
                 Please send your product donations to:
                 <p>PO Box 12345, Gainesville, FL, 32611</p>
               </div>
-              <button className={`${styles.donateButton}`} type="submit">Notify Us</button>
-            </div>
+              <button className={`${styles.donateButton}`} type="submit" disabled={!isFormValid}>
+                Notify Us
+              </button>
+            </>
           )}
         </form>
         <div className="text-center">
-          <Link href="/">Back to Home</Link>
+          <Link href="/" passHref>
+          Back to Home
+          </Link>
         </div>
       </div>
     </div>
