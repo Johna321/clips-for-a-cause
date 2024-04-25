@@ -7,7 +7,7 @@ export default function About() {
     const teamMembers = [
         {
             
-            name: "Carson K",
+            name: "Sean Lewertow",
             study: "3rd Year Computer Science",
             location: "Miami, FL",
             funFact: "I’m a barber",
